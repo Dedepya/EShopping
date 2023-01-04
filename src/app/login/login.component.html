@@ -1,0 +1,18 @@
+<h3 class="head mt-5">Login</h3>
+
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <label>Username: </label>
+        <input type="text" formControlName="userName">
+        <br />
+        <br />
+        <input type="password" formControlName="password">
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div>
+    <p>{{'Welcome ' + loggedInData.userName + '!'}}</p>
+</div> 
