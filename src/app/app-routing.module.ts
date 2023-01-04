@@ -6,9 +6,9 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  {path:'products',component:ProductComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'login',component:LoginComponent}
+  { path: 'products', component: ProductComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

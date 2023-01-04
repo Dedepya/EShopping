@@ -1,18 +1,95 @@
-<h3 class="head mt-5">Login</h3>
+<div style="text-align:center" class="container mt-4">
 
-<div>
-    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-        <label>Username: </label>
-        <input type="text" formControlName="userName">
-        <br />
-        <br />
-        <input type="password" formControlName="password">
-        <br />
-        <br />
-        <button type="submit">Submit</button>
+   
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" >
+
+        <fieldset>
+
+            <legend class="text-info">Login</legend>
+
+            <br/>
+
+            <input type="text" formControlName="userName">
+
+            <br />
+
+            <br />
+
+            <input type="password" formControlName="password">
+
+            <br />
+
+            <br />
+
+            <div *ngIf="temp">
+
+            <button type="submit">Submit</button></div>
+
+            <br/>
+
+           
+
+                <!-- <div [routerLink]="['']"></div> -->
+
+            <!-- </div> -->
+
+            <div *ngIf="!temp">
+
+                <button type="submit">Submit</button></div>
+
+           
+
+            New User?<a [routerLink]="['/register']">Register</a>
+
+            <h2 class="text-success">{{'Welcome ' + loggedInData.userName + '!'}}</h2>
+
+        </fieldset>
+
     </form>
-</div>
 
-<div>
-    <p>{{'Welcome ' + loggedInData.userName + '!'}}</p>
-</div> 
+<!-- </div> -->
+
+<!-- <div> -->
+
+   
+
+<!-- </div>  -->
+
+<!-- <h3>Login Form (template driven form) </h3> -->
+
+
+
+ <!-- <div>
+
+    <form #logIn="ngForm" (ngSubmit)="submitLogin()">
+
+        <input type="text" [(ngModel)]="loggedInData.userName" name="userName">
+
+        <br />
+
+        <br />
+
+        <input type="password" [(ngModel)]="loggedInData.password" name="password">
+
+        <br />
+
+        <br />
+
+        <button type="submit"*ngIf="temp==true" [routerLink]="['']">Submit</button>
+
+    </form>
+
+    <div *ngIf="temp">
+
+        <div [routerLink]="['product']"></div>
+
+    </div>
+
+</div>  -->
+
+<!-- <div>
+
+    <p>{{'Welcome ' + submittedData.userName + '!'}}</p>
+
+</div> -->
