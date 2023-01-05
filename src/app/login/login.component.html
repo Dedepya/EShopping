@@ -1,16 +1,20 @@
-<div class="container mt-3 pt-3">
-    <h3>Login</h3>
-    <hr />
-    <div class="mt-3 pt-3 d-flex ">
-        <form class="form form-group" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-            <input class="form-control mt-3" type="text" formControlName="userName" minlength="6" required="true"
-                placeholder="Enter username">
-            <input class="form-control mt-3" type="password" formControlName="password" minlength="6"
-                placeholder="Enter password">
-            <button class="btn btn-outline-light text-light bg-dark mt-3 text-secondary text-right" type="submit">Login</button>
-        </form>
-    </div>
-    <div class="mt-3 pt-3 text-danger" *ngIf="userMessage">
-        <p>{{userMessage}}</p>
+<div style="background-image: 
+url('https://resources.deloitte.com/_api/v2.1/sites/resources.deloitte.com,70068a7f-ec05-45dc-8839-c687c92f3272,823dcaac-0b83-4015-a37f-897dd80fc1cb/lists/676be606-88e7-4f62-a841-e629037c288f/items/a2bad36e-c93e-4e61-a47e-51121445a090/driveItem/thumbnails/0/c1600x99999/content?preferNoRedirect=true&prefer=extendCacheMaxAge&clientType=modernWebPart');
+background-repeat: no-repeat; ">
+    <div style="min-height: 100vh; text-shadow: 2px 2px #cccccc;" class="container pt-3">
+        <h1 class="head pt-2 mt-2">Login</h1>
+        <div class="mt-2 pt-3 d-flex ">
+            <form class="form form-group" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+                <input class="form-control mt-3" type="text" formControlName="userName" minlength="6" required="true" placeholder="Enter username">
+                <input class="form-control mt-3" type="password" formControlName="password" minlength="6" placeholder="Enter password">
+                <button class="btn btn-outline-light text-light bg-dark mt-4 text-secondary text-right" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="new-user mt-4">
+            New User? <button [routerLink]="['/register']" class="btn btn-sm btn-outline-dark"> Register</button>
+        </div>
+        <div class="mt-3 pt-3 text-danger" *ngIf="userMessage">
+            <p>{{userMessage}}</p>
+        </div>
     </div>
 </div>

@@ -1,7 +1,5 @@
 <div class="container mt-3 pt-3">
-    <h3>Device Details</h3>
-    <hr />
-        <p class="lead"><strong>View the product details here.</strong></p>
+    <h1 class="h text-center mb-5">Device Details</h1>
     <div class="container pt-1 mt-lg-3" id="about">
             <div class="row">
               <div class="col-lg-6 mb-2">
@@ -10,10 +8,12 @@
               <div class="col-lg-6 mb-2 flex-column d-flex justify-content-center align-items-flex-start" style="height: 400px;">
                 <h1 class="name mb-4 mt-5"><span style="color:black ;">{{product.productName}}</span></h1>
                 <p>{{product.description}}</p>
-                <h6 class="price mt-1 mb-4">Price: {{product.price}}</h6>
+                <h6 class="price mt-1 mb-4">Price: ₹{{product.price}}</h6>
                 <div class="border-2">           
-                <button class="btn btn-lg btn-outline-dark px-4" (click)=addtocart(product)> <i class="fa fa-shopping-cart"> </i> Add to cart</button>
-
+                <button class="btn btn-lg btn-dark px-4 me-5" (click)=addtocart(product)> Add to cart</button>
+                <span>
+                  <button class="btn btn-lg btn-success px-4" routerLink="/payment">  Buy Now </button>
+                </span>
 
             </div>
               </div>

@@ -22,8 +22,8 @@
                                 <td>{{item.productName}}</td>
                                 <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                                 <td style="width: 25%;">{{item.description}}</td>
-                                <th style="width: 12%;">{{item.price}}</th>
-                                <td style="width: 20%;">{{item.price}}</td>
+                                <th style="width: 12%;">₹{{item.price}}</th>
+                                <td style="width: 20%;">₹{{item.price}}</td>
                                 <td>
                                     <button (click)="removeItem(item)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
                                 </td>
@@ -38,11 +38,11 @@
             </div>
             <td><button (click)="emptycart()" class="btn btn-dark mt-5 me-5">Empty Cart</button></td>
             <td><button routerLink="/products" class="btn btn-success mt-5 me-5">Shop More</button></td>
-            <td><button class="btn btn-dark mt-5 me-5">Checkout</button></td>
+            <td><button routerLink="/payment" class="btn btn-dark mt-5 me-5">Checkout</button></td>
         </div>
     </ng-container>
     
-    <ng-container *ngIf="products.length ==0">
+    <div class="container" *ngIf="products.length ==0">
         <div class="container">
             <div class="card">
                 <h3 class="card-title">My Cart</h3>
@@ -54,5 +54,5 @@
                 <button routerLink="/products" class="btn btn-dark">Shop Now</button>
             </div>
         </div>
-    </ng-container>
+    </div>
 </div>
