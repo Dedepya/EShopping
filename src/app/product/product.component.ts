@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AppConfig } from '../config/AppConfig';
+import { ProductService } from '../services/product/product.service';
 
 @Component({
   selector: 'app-product',
@@ -7,4 +10,20 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+  productsList: any;
+
+  constructor(private productService: ProductService) {
+    this.productService.getAllProducts()
+      .subscribe((productsArray) => {
+        this.productsList = productsArray.valueOf();
+        for (const product of this.productsList)
+          console.log(product);
+      });
+  };
+
+  searchText: string='';
+  onsearchTextEntered(searchValue: string){
+    this.searchText=searchValue;
+    console.log(this.searchText);
+  }
 }

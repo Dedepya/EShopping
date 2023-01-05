@@ -19,6 +19,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { Page404Component } from './page404/page404.component';
 import { HomeComponent } from './home/home.component';
+import { SearchPipe } from './search.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     HeaderComponent,
     Page404Component,
-    HomeComponent
+    HomeComponent,
+    SearchPipe,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

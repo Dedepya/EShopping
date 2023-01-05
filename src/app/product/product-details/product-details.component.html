@@ -1,0 +1,24 @@
+<div class="container mt-3 pt-3">
+    <h3>Product Details</h3>
+    <hr />
+    <div class="mt-3 pt-3">
+        <p class="lead">View the product details here.</p>
+    </div>
+    <div>
+        <span>{{ product.productName }} {{ product.price }} {{ product.description }}</span>
+        <div class="container pt-5 mt-lg-5" id="about">
+            <div class="row">
+              <div class="col-lg-6 mb-2">
+                <img src="{{product.image}}" width="100%" alt=""> 
+              </div>
+              <div class="col-lg-6 mb-2 flex-column d-flex justify-content-center align-items-flex-start" style="height: 400px;">
+                <h1><span style="color:#0075f6 ;"><span style="color: black;"> I'm </span><span style="color:#0075f6 ;">Dedeepya </span> </span></h1>
+                <h5>{{product.description}}</h5>
+                <div class="border-2">            
+                <a href="https://drive.google.com/file/d/1x0bhTfRZ5Okr664U2VNSD2xK0vzXsFlf/view?usp=sharing" class="btn btn-lg btn-outline-primary px-4" target="_blank"><i class="fa fa-download"></i> Download Resume</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

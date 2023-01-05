@@ -67,15 +67,66 @@
   "products": [
     {
       "id": 10001,
-      "price": 49000,
-      "productName": "oneplus mobile phone",
-      "description": "good mobile phone at this price"
+      "price": 33900,
+      "productName": "OnePlus 9",
+      "description": "A OnePlus-exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for Mobile delivers industry-leading mobile photography innovations.",
+      "image":"https://www.reliancedigital.in/medias/OnePlus-9-SmartPhones-491947285-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wzMDg4MTN8aW1hZ2UvanBlZ3xpbWFnZXMvaDNkL2hjNC85ODY5MTI1OTQzMzI2LmpwZ3xkMGRmYjk0ZDU1YjZlODA1ZTBmOTBlYzk2ZjZjOTViYmFhNWRhMWVjNzRhZDJlZjI4ODliNGI2Nzk5YzdlMGFj"
     },
     {
       "id": 10002,
       "price": 95000,
-      "productName": "dell laptop",
-      "description": "very good laptop for development"
+      "productName": "Dell Inspiron 16",
+      "description": "A Dell-exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for laptop delivers industry-leading laptop gaming innovations.",
+      "image":"https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/14-541x/global-spi/ng/notebook-latitude-14-541x-hero-504x350-ng.psd?fmt=jpg&wid=570&hei=400"
+    },
+    {
+      "id": 10003,
+      "price": 61900,
+      "productName": "iPhone 12",
+      "description":  "A Apple's exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for Mobile delivers industry-leading mobile photography innovations. ",
+      "image": "https://media.croma.com/image/upload/v1662424508/Croma%20Assets/Communication/Mobiles/Images/229926_xrit8z.png"
+    },
+    {
+      "id": 10004,
+      "price": 111900,
+      "productName": "Lenovo Legion 5",
+      "description":  " A Lenovo-exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for laptop delivers industry-leading laptop gaming innovations.",
+      "image": "https://www.lenovo.com/medias/Legion-5iPro-Gen-6-SS-Hero.png?context=bWFzdGVyfHJvb3R8NTEyMDd8aW1hZ2UvcG5nfGgwMS9oMDMvMTI5OTE1MDg0NDcyNjIucG5nfGI5NjdlYzNmNDA2M2E1YzI2MGY0NjIwMDUzYjI1ZDQ5ZGM3N2RhMTEzNTA0MDdlNmMxYmRiZDMzNTE5YmFkNWQ"
+    },
+    {
+      "id": 10005,
+      "price": 145900,
+      "productName": "MacBook Pro",
+      "description":  "An apple's exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for laptop delivers industry-leading laptop innovations. ",
+      "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202110?wid=1808&hei=1680&fmt=jpeg&qlt=90&.v=1632788573000"
+    },
+    {
+      "id": 10006,
+      "price": 50900,
+      "productName": "One Plus Nord",
+      "description":  " A OnePlus-exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for Mobile delivers industry-leading mobile photography innovations. ",
+      "image": "https://oasis.opstatics.com/content/dam/oasis/page/2022/operation/aug/0804/n20se/N20SE_Black.png"
+    },
+    {
+      "id": 10007,
+      "price": 41900,
+      "productName": "Samsung Galaxy S21",
+      "description":  "A Samsung-exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for Mobile delivers industry-leading mobile photography innovations.",
+      "image": "https://m.media-amazon.com/images/I/8131pwAojZL._SL1500_.jpg"
+    },
+    {
+      "id": 10008,
+      "price": 110999,
+      "productName": "HP ZBook Laptop",
+      "description":  "A HP-exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for laptop delivers industry-leading laptop gaming innovations. ",
+      "image": "https://img5.gadgetsnow.com/gd/images/products/additional/large/G333751_View_1/computer-laptop/laptops/hp-zbook-power-g8-50d11pa-intel-core-i7-11th-gen-11800h-15-6-inches-notebook-laptop-32gb-1tb-ssd-windows-10-grey-1-89-kg-.jpg"
+    },
+    {
+      "id": 10009,
+      "price": 25999,
+      "productName": "Redmi Note 9 Pro",
+      "description":  " A Redmi Not 9 Pro is exclusive and co-developed with Hasselblad, the flagship Hasselblad Camera for Mobile delivers industry-leading mobile photography innovations.",
+      "image": "https://i01.appmifile.com/webfile/globalimg/products/m/redmi-note-9/s1phoneend.png"
     }
   ]
 }

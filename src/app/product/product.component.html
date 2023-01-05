@@ -1,1 +1,37 @@
-<p>Product works</p>
+<div class="container mt-3 pt-3">
+    <h3>My Technology</h3>
+    <hr />
+    <div class="mt-3 pt-3">
+        <p class="lead">Devices Catalog</p>
+    </div>
+    <div>
+        <div class="row">
+            <div *ngFor="let product of productsList" class="col px-3 mx-3 py-3 my-3">
+                <div class="card text-center mb-4" style="width: 18rem;">
+                    <img src="{{product.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">{{product.productName}}</h4>
+                        <h6 class="card-text">Price: {{ product.price }}</h6>
+                        <p class="card-text">{{ product.description }}</p>
+                        <a [routerLink]="['/product-details', product.id]" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- <div *ngFor="let product of productsList">
+            <div class="card text-center mb-4" style="width: 18rem;">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title">{{product.productName}}</h4>
+                  <h6 class="card-text">Price: {{ product.price }}</h6>
+                  <p class="card-text">{{ product.description }}</p>
+                  <a [routerLink]="['/product-details', product.id]" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
