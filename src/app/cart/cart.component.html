@@ -11,7 +11,6 @@
                                 <th>Product Image</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Quantity</th>
                                 <th>Total</th>
                                 <th>Action</th>
                             </tr>
@@ -20,27 +19,26 @@
                         <tbody>
                             <tr *ngFor="let item of products; let i = index">
                                 <td>{{i+1}}</td>
-                                <td>{{item.title}}</td>
+                                <td>{{item.productName}}</td>
                                 <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                                 <td style="width: 25%;">{{item.description}}</td>
                                 <th style="width: 12%;">{{item.price}}</th>
-                                <td style="width: 12%;">{{item.quantity}}</td>
-                                <td style="width: 12%;">{{item.total}}</td>
+                                <td style="width: 20%;">{{item.price}}</td>
                                 <td>
                                     <button (click)="removeItem(item)" class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="4"></td>
-                                <td><button (click)="emptycart()" class="btn btn-dark">Empty Cart</button></td>
-                                <td><button routerLink="/products" class="btn btn-success">Shop More</button></td>
-                                <td><button class="btn btn-dark">Checkout</button></td>
-                                <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                                <td colspan="5"></td>
+                                <td><strong>Grand Total: ₹{{grandTotal}}</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            <td><button (click)="emptycart()" class="btn btn-dark mt-5 me-5">Empty Cart</button></td>
+            <td><button routerLink="/products" class="btn btn-success mt-5 me-5">Shop More</button></td>
+            <td><button class="btn btn-dark mt-5 me-5">Checkout</button></td>
         </div>
     </ng-container>
     

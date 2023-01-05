@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartService } from '../cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,36 +8,21 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent {
   public products : any = [];
-
   public grandTotal !: number;
-
   constructor(private cartService : CartService) { }
 
-
-
   ngOnInit(): void {
-
-    this.cartService.getProducts()
-
-    .subscribe(res=>{
-
+    this.cartService.getProducts().subscribe(res=>{
       this.products = res;
-
       this.grandTotal = this.cartService.getTotalPrice();
-
     })
-
   }
 
   removeItem(item: any){
-
     this.cartService.removeCartItem(item);
-
   }
 
   emptycart(){
-
     this.cartService.removeAllCart();
-
   }
 }

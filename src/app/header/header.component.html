@@ -18,12 +18,6 @@
                     <li class="nav-item">
                         <a [routerLink]="['/login']" class="nav-link">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/account']" class="nav-link">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/logout']" class="nav-link">Logout</a>
-                    </li>
                 </ul>
             </div>
             <div>
@@ -32,11 +26,24 @@
                 </form>
             </div>
             <div>
-                <button routerLink="cart" class="btn btn-outline-light">
+                <button routerLink="cart" class="btn btn-outline-light me-3">
                     <i style="font-size: 20px;" class="fa fa-shopping-cart"></i>
-                    <div style="font-size: 10px;" class="badge bg-dark">{{totalItem}}</div>
+                    <div style="font-size: 12px;" class="badge bg-dark">{{totalItem}}</div>
                 </button>
             </div>
+
+            <div>
+                <button routerLink="account" class="btn btn-outline-light bg-dark me-3">
+                        <i style="font-size: 20px; color:white;" class="fa fa-user"></i>
+                </button>
+            </div>
+
+            <div>
+                <button routerLink="logout" class="btn btn-outline-light bg-dark">
+                        <i style="font-size: 20px; color:white;" class="fa fa-sign-out-alt"></i>
+                </button>
+            </div>
+
         </div>
     </nav>
 </header>
