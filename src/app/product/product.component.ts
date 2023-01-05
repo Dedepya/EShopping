@@ -20,10 +20,4 @@ export class ProductComponent {
           console.log(product);
       });
   };
-
-  searchText: string='';
-  onsearchTextEntered(searchValue: string){
-    this.searchText=searchValue;
-    console.log(this.searchText);
-  }
 }

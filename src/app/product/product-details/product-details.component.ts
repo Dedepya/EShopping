@@ -9,18 +9,21 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
-  pid: number;
+  pId: number;
   product: any;
+  allProds: any = [];
 
   constructor(private productService: ProductService, private route: ActivatedRoute) {
-    this.pid = 0;
+    this.pId = 0;
     this.product = {}
   }
 
   ngOnInit() {
+    this.product = {}
+
     this.route.params.subscribe(params => {
-      this.pid = params['id'];
-      this.productService.getProductById(this.pid)
+      this.pId = params['id'];
+      this.productService.getProductById(this.pId)
         .subscribe(prod => this.product = prod.valueOf());
     });
   }

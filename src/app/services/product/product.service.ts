@@ -21,4 +21,8 @@ export class ProductService {
     console.log('getAllProducts');
     return this.http.get(`${this.httpUrl}/products/${pid}`);
   };
+
+  getProductByName(pName: string) {
+    return this.http.get(`${this.httpUrl}/products?productName=${pName}`)
+  }
 }

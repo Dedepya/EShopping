@@ -8,7 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { ProductComponent } from './product/product.component';
-import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -22,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchPipe } from './search.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { SearchComponent } from './product/search/search.component';
+
 
 
 @NgModule({
