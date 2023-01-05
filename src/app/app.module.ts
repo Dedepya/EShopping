@@ -16,6 +16,9 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { Page404Component } from './page404/page404.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CartComponent,
     OrderComponent,
     PaymentComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    Page404Component,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

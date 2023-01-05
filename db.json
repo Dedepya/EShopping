@@ -30,6 +30,38 @@
       "email": "user2@gmail.com",
       "password": "asdfghjk",
       "id": 1005
+    },
+    {
+      "fullname": "Nareddy Ajay",
+      "userName": "ajay",
+      "email": "user2@gmail.com",
+      "password": "asdfghjk",
+      "id": 1006
+    },
+    {
+      "userName": "ajay",
+      "password": "asdfg",
+      "id": 1007
+    },
+    {
+      "userName": "ajay",
+      "password": "sdfghjk",
+      "id": 1008
+    },
+    {
+      "userName": "ajay",
+      "password": "sdfghj",
+      "id": 1009
+    },
+    {
+      "userName": "Tarun",
+      "password": "asdfghjkl",
+      "id": 1010
+    },
+    {
+      "userName": "Kasyap",
+      "password": "Kasyap",
+      "id": 1011
     }
   ],
   "products": [

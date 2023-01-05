@@ -1,210 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-
-import { FormGroup, FormControl } from '@angular/forms';
-
-import { BackendService } from '../backend.service';
-
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppUser } from '../models/AppUser';
+import { UserService } from '../services/user/user.service';
 
 
 @Component({
-
   selector: 'app-login',
-
   templateUrl: './login.component.html',
-
   styleUrls: ['./login.component.css']
-
 })
 
-// export class LoginComponent{
-
-
-
-//   temp:boolean;
-
-//   constructor(private service:BackendService){
-
-//     this.temp=true;
-
-//   };
-
-//   loggedInData = {
-
-//     userName: '',
-
-//     password: ''
-
-//   };
-
-
-
-//   submittedData = {
-
-//     userName: '',
-
-//     password: ''
-
-//   };
-
-//   submitLogin = () => {
-
-//     console.log(this.loggedInData);
-
-//     this.submittedData = this.loggedInData;
-
-//     this.checkUser(this.submittedData);
-
-//     // this.addUser(this.submittedData);
-
-//   };
-
-
-
-//   checkUser=(data:any)=>{
-
-//     console.log(data);
-
-//     this.service.searchUsers(data.userName,data.password)
-
-//     .subscribe((response)=>{
-
-//       if(response.valueOf()===data){
-
-//         console.log(response.valueOf());
-
-//         console.log(data);
-
-//         this.temp=false;
-
-//       }
-
-//       else{
-
-//         this.temp=true;
-
-//       }
-
-//     })
-
-// }
-
-// }
-
-
-
-
-// }
-
-//Class for Reactive Form
-
 export class LoginComponent implements OnInit {
-
-
-
   loginForm: FormGroup;
+  loggedInData: AppUser;
+  userMessage: string = '';
 
-
-
-  constructor(private service: BackendService,private router:Router) {
-
-    this.loginForm = new FormGroup({});
-
-    this.temp = true;
-
-  };
-
-
-
-  loggedInData = {
-
-    userName: '',
-
-    password: ''
-
-  };
-
-
-
-  ngOnInit(): void {
-
-    this.loginForm = new FormGroup({
-
-      userName: new FormControl(''),
-
-      password: new FormControl('')
-
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
+    this.loggedInData = {
+      userName: '',
+      password: ''
+    };
+    this.loginForm = formBuilder.group({
+      userName: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(32)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(32)]],
     });
 
-  }
+  };
 
-  temp: boolean;
+  ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      userName: new FormControl(''),
+      password: new FormControl('')
+    });
+  }
 
   submitLogin = () => {
-
-    this.loggedInData = this.loginForm.value;
-
-    this.service.searchUsers(this.loggedInData.userName, this.loggedInData.password)
-
-      .subscribe(response => {
-
-        console.log(response);
-
-        console.log(response.valueOf().toString().length);
-
-        console.log(this.loggedInData);
-
-        if (response.valueOf().toString().length!=0) {
-
-          this.temp = true;
-
-          this.router.navigate(['']);
-
+    console.log(this.loginForm.value);
+    this.userService.login(this.loginForm.value)
+      .subscribe((resp) => {
+        if (JSON.stringify(resp).length > 2) {
+          this.loggedInData = JSON.parse(JSON.stringify(resp).substring(1, JSON.stringify(resp).length - 1));
+          if (this.loggedInData.userName === this.loginForm.value.userName) {
+            localStorage.setItem('appUser', this.loggedInData.userName);
+            this.loginForm.reset();
+            console.log('login', localStorage.getItem('appUser'));
+            this.router.navigate(['products']);
+          }
         }
-
         else {
-
-          this.temp = false;
-
-          this.router.navigate(['/login']);
-
+          this.loginForm.reset();
+          this.userMessage = 'Invalid credentials!';
         }
-
-        // console.log(this.temp);
-
-      }
-
-      )
-
-  }
-
-  // })}
-
-
-
-  // .then()
-
-  // .catch();
-
-
-
-
-  // console.log(this.loginForm.value);
-
+      });
+  };
 };
 
 
-
-// //Class for template driven form
-
-
-
-
-//   submitLogin = (login: any) => {
-
-//     console.log(login.value);
-
-//     this.submittedData = login.value;
-
-//   };
 
