@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product/product.service';
+import { CartService } from 'src/app/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +14,7 @@ export class ProductDetailsComponent {
   product: any;
   allProds: any = [];
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) {
+  constructor(private productService: ProductService,private cartService: CartService, private route: ActivatedRoute) {
     this.pId = 0;
     this.product = {}
   }
@@ -26,5 +27,8 @@ export class ProductDetailsComponent {
       this.productService.getProductById(this.pId)
         .subscribe(prod => this.product = prod.valueOf());
     });
+  }
+  addtocart(item: any){
+    this.cartService.addtoCart(item);
   }
 }

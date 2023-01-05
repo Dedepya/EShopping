@@ -12,7 +12,10 @@
                 <p>{{product.description}}</p>
                 <h6 class="price mt-1 mb-4">Price: {{product.price}}</h6>
                 <div class="border-2">            
-                <a [routerLink]="['/cart']" class="btn btn-lg btn-outline-dark px-4" ><i class="fa fa-shopping-cart"> </i> Add to Cart</a>
+                <a class="btn btn-lg btn-outline-dark px-4" ><i class="fa fa-shopping-cart"> </i> Add to Cart</a>
+                <button class="btn btn-primary" (click)=addtocart(product)>Add to cart</button>
+
+
             </div>
               </div>
             </div>
