@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         }
         else {
           this.loginForm.reset();
-          this.userMessage = 'Invalid credentials!';
+          alert('Invalid credentials!');
         }
       });
   };

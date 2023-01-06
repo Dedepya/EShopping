@@ -1,4 +1,4 @@
-<div class="container mt-5 px-5">
+<!-- <div class="container mt-5 px-5">
     <div class="mb-4">
         <h1>Payment</h1>
     </div>
@@ -7,22 +7,20 @@
             <div class="col-md-8">
                 <div class="card p-3">
                     <h6 class="text-uppercase">Payment details</h6>
-                    <div class="inputbox mt-3"> 
-                        <input type="text" class="form-control" formControlName="Name" minlength="6" required="true"> <span>Name on card</span> 
+                    <div class="inputbox mt-3">
+                        <input type="text" class="form-control" formControlName="Name" minlength="6" required="true" [(ngModel)]="Name"> <span>Name on card</span>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="inputbox mt-3 mr-2"> <input type="number" formControlName="card" class="form-control" required="true"> <i class="fa fa-credit-card"></i> <span>Card Number</span> </div>
+                            <div class="inputbox mt-3 mr-2"> <input type="number" formControlName="card" class="form-control" required="true" [(ngModel)]="card"> <i class="fa fa-credit-card"></i> <span>Card Number</span> </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="d-flex flex-row">
-                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="expiry" class="form-control" required="true"> <span>Expiry</span> </div>
-                            <div class="inputbox mt-3 mr-2"> <input type="number" formControlName="cvv" class="form-control" required="true"> <span>CVV</span> </div>
+                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="expiry" class="form-control" required="true" [(ngModel)]="expiry"> <span>Expiry</span> </div>
+                            <div class="inputbox mt-3 mr-2"> <input type="number" formControlName="cvv" class="form-control" required="true" [(ngModel)]="cvv"> <span>CVV</span> </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="mt-4 mb-4">
                         <h6 class="text-uppercase">Billing Address</h6>
                         <div class="row mt-3">
@@ -33,10 +31,10 @@
                                 <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="city" class="form-control" required="true"> <span>City</span> </div>
                             </div>
                         </div>
-
                         <div class="row mt-2">
                             <div class="col-md-6">
                                 <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="state" class="form-control" required="true"> <span>State/Province</span> </div>
+
                             </div>
                             <div class="col-md-6">
                                 <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="zip" class="form-control" required="true"> <span>Zip code</span> </div>
@@ -44,13 +42,15 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="mt-4 mb-4 d-flex justify-content-between">
+
                     <span></span>
-                    <button class="btn btn-success px-3" type="submit" routerLink="/order">Pay Now</button>
+                    <div class="error">{{errormsg}}</div>
+                    <button class="btn btn-success px-3" type="submit"  (click)="pay()">Pay Now</button>
                 </div>
             </div>
-
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card card-blue p-3 text-white mb-3">
                     <div class="d-flex flex-row align-items-end mb-3">
                         <h1 class="mb-0 yellow">Pay & Enjoy</h1>
@@ -64,4 +64,139 @@
             </div>
         </div>
     </form>
+</div> -->
+
+
+<div class="container mt-5 px-5">
+
+    <div class="mb-4">
+
+        <h1>Payment</h1>
+
+    </div>
+
+    <form class="form form-group required">
+
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <div class="card p-3">
+
+                    <h6 class="text-uppercase">Payment details</h6>
+
+                    <div class="inputbox mt-3">
+
+                        <input type="text" class="form-control" formControlName="Name" minlength="6" required="true"> <span>Name on card</span>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="inputbox mt-3 mr-2"> <input type="number" formControlName="card" class="form-control" required="true"> <i class="fa fa-credit-card"></i> <span>Card Number</span> </div>
+
+                        </div>
+
+
+
+                        <div class="col-md-6">
+
+                            <div class="d-flex flex-row">
+
+                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="expiry" class="form-control" required="true"> <span>Expiry</span> </div>
+
+                            <div class="inputbox mt-3 mr-2"> <input type="number" formControlName="cvv" class="form-control" required="true"> <span>CVV</span> </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="mt-4 mb-4">
+
+                        <h6 class="text-uppercase">Billing Address</h6>
+
+                        <div class="row mt-3">
+
+                            <div class="col-md-6">
+
+                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="address" class="form-control" required> <span>Street Address</span> </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="city" class="form-control" required="true"> <span>City</span> </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row mt-2">
+
+                            <div class="col-md-6">
+
+                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="state" class="form-control" required="true"> <span>State/Province</span> </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="inputbox mt-3 mr-2"> <input type="text" formControlName="zip" class="form-control" required="true"> <span>Zip code</span> </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="mt-4 mb-4 d-flex justify-content-between">
+
+                    <span></span>
+
+                    <button class="btn btn-success px-3" type="submit" routerLink="/order">Pay Now</button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <div class="card card-blue p-3 text-white mb-3">
+
+                    <div class="d-flex flex-row align-items-end mb-3">
+
+                        <h1 class="mb-0 yellow">Pay & Enjoy</h1>
+
+                    </div>
+
+                    <span>All the features and perk after you complete the payment</span>
+
+                    <a href="#" class="yellow decoration">Know all the features</a>
+
+                    <div class="hightlight">
+
+                        <span>100% Guaranteed support and update for the next 5 years.</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
 </div>
